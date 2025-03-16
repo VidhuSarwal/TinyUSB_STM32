@@ -110,8 +110,8 @@ all: main-build
 main-build: myTinyUSB.elf secondary-outputs
 
 # Tool invocations
-myTinyUSB.elf myTinyUSB.map: $(OBJS) $(USER_OBJS) /home/vidhu/STM32CubeIDE/workspace_1.18.0/myTinyUSB/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "myTinyUSB.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/vidhu/STM32CubeIDE/workspace_1.18.0/myTinyUSB/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="myTinyUSB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+myTinyUSB.elf myTinyUSB.map: $(OBJS) $(USER_OBJS) C:\Users\Vidhu\Documents\rigour\rtems\tiny\TinyUSB_STM32\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "myTinyUSB.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Vidhu\Documents\rigour\rtems\tiny\TinyUSB_STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="myTinyUSB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
